@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MGVF-U Interactive Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="space" id="space">
+    <div class="stars" id="stars"></div>
+    <div class="blackhole-wrap" id="blackhole">
+      <div class="stiffness-field" id="field"></div>
+      <div class="disk"></div>
+      <div class="hole"></div>
+    </div>
+  </div>
+
+  <div class="cockpit">
+    <div class="window-frame"></div>
+    <div class="ship-rib rib-left"></div>
+    <div class="ship-rib rib-right"></div>
+  </div>
+
+  <header class="site-header">
+    <div>
+      <div class="eyebrow">MGVF-U Interactive Explorer</div>
+      <h1>Black Hole Mission Simulator</h1>
+    </div>
+    <button class="info-button" id="infoButton" aria-label="Open explanation">Science Notes</button>
+  </header>
+
+  <main class="dashboard" aria-label="MGVF-U Black Hole Mission Simulator dashboard">
+    <div class="topbar">
+      <div>
+        <div class="title">Vacuum Stiffness Explorer</div>
+        <div class="mode">Mission One: Event Horizon Approach</div>
+      </div>
+      <div class="pill" id="levelPill">Approach Level 0 / 10</div>
+    </div>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="label">Earth Mission Clock</div>
+        <div class="big" id="earthClock">00y 000d 00:00:00</div>
+        <div class="small">Reference clock far from the black hole.</div>
+
+        <div class="label spacer">Ship Clock</div>
+        <div class="big" id="shipClock">00d 00:00:00</div>
+        <div class="small">Local time inside the starship cockpit.</div>
+      </div>
+
+      <div class="panel">
+        <div class="label">Time Dilation</div>
+        <div class="big" id="dilation">1×</div>
+        <div class="bar"><div class="fill" id="dilationBar"></div></div>
+
+        <div class="label">Vacuum Stiffness</div>
+        <div class="big" id="stiffness">1 / 10</div>
+        <div class="bar"><div class="fill" id="stiffnessBar"></div></div>
+
+        <button class="toggle" id="overlayToggle">MGVF-U Overlay: On</button>
+      </div>
+
+      <div class="panel">
+        <div class="label">Mission Log</div>
+        <div class="mission-log" id="missionLog">
+          Stable orbit. Vacuum stiffness minimal. Ship and Earth clocks remain synchronized.
+        </div>
+        <div class="controls">
+          <button id="approach">Approach</button>
+          <button id="retreat">Retreat</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="modal hidden" id="scienceModal" role="dialog" aria-modal="true" aria-label="Science notes">
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Close explanation">×</button>
+      <h2>Science Notes</h2>
+      <p>
+        In general relativity, clocks run slower near a black hole because spacetime is strongly curved.
+      </p>
+      <p>
+        This MGVF-U demonstration keeps that familiar time-dilation story, then adds a visual layer:
+        the vacuum stiffness field. As the ship approaches the black hole, the cockpit instruments show
+        increasing simulated vacuum stiffness.
+      </p>
+      <p class="note">
+        The time-dilation effect is established physics. The vacuum-stiffness layer is a conceptual
+        MGVF-U visualization, designed for education and storytelling rather than numerical prediction.
+      </p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
